@@ -4,8 +4,8 @@
 #
 
 $datePath = $PSScriptRoot + "\" + (Get-Date).toString("yyyy\\MM\\dd")
-$journalFilePath = $datePath + "\journal.txt"
-$journalTemplatePath = $PSScriptRoot + "\setup\journal.txt"
+$journalFilePath = $datePath + "\journal.md"
+$journalTemplatePath = $PSScriptRoot + "\setup\journal.md"
 
 if (-not (test-path $datePath)) {
     new-item -path $datePath -ItemType Directory
@@ -20,4 +20,4 @@ if (-not (test-path $journalFilePath)) {
     }
 }
 
-notepad $journalFilePath
+code $journalFilePath
